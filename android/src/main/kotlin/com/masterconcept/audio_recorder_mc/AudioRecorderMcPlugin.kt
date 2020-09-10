@@ -116,6 +116,7 @@ public class AudioRecorderMcPlugin: FlutterPlugin, MethodCallHandler, EventChann
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
+    setupChannel.setMethodCallHandler(null)
     startRecordChannel.setMethodCallHandler(null)
     stopRecordChannel.setMethodCallHandler(null)
     samplesRecordChannel.setStreamHandler(null)
